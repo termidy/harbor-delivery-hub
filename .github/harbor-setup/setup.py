@@ -41,6 +41,9 @@ def api(method, path, body=None):
             if e.code in (403, 429) and attempt < 4:   # secondary rate limit on creating many issues: wait and retry
                 time.sleep(20 * (attempt + 1))
                 continue
+            if e.code >= 500 and attempt < 4 and method == "GET":
+                time.sleep(5 * (attempt + 1))
+                continue
             raise RuntimeError(f"{method} {path}: {e.code} {e.read().decode()[:300]}")
 
 
@@ -74,12 +77,38 @@ def milestones():
     return numbers
 
 
-def issues(numbers, items):
+def all_issues():
+    out, page = [], 1
+    while True:
+        part = api("GET", f"/repos/{REPO}/issues?state=all&per_page=100&page={page}&sort=created&direction=asc")
+        out += [x for x in part if "pull_request" not in x]
+        if len(part) < 100:
+            return sorted(out, key=lambda x: x["number"])
+        page += 1
+
+
+def create_issue(body):
+    """POST an issue; a 5xx may still have created it, so look before trying again (a second copy would shift every number)"""
+    for attempt in range(4):
+        try:
+            return api("POST", f"/repos/{REPO}/issues", body)
+        except RuntimeError as e:
+            if ": 5" not in str(e) or attempt == 3:
+                raise
+            time.sleep(8 * (attempt + 1))
+            last = all_issues()
+            if last and last[-1]["title"] == body["title"]:
+                return last[-1]
+
+
+def issues(numbers, items, first=1):
     for i, it in enumerate(items, 1):
+        if i < first:
+            continue
         body = {"title": it["title"], "body": it["body"], "labels": it.get("labels", [])}
         if it.get("milestone"):
             body["milestone"] = numbers[it["milestone"]]
-        made = api("POST", f"/repos/{REPO}/issues", body)
+        made = create_issue(body)
         if made["number"] != i:   # an empty copy: the position in the list is the issue number
             print(f"WARNING issue {it['title']!r} got #{made['number']}, expected #{i}")
         if it.get("state") == "closed":
@@ -112,17 +141,22 @@ def section_files():
 def main():
     labels()
     numbers = milestones()
-    existing = api("GET", f"/repos/{REPO}/issues?state=all&per_page=1")
-    if existing:
-        print("issues: the copy already has issues, none created (numbers must stay the same in every copy)")
+    items = load("issues.json")
+    for s in range(3, section + 1):   # issues that appear in later weeks of the story
+        extra = os.path.join(HERE, "sections", f"s{s}.issues.json")   # outside the copied folder sections/sN
+        if os.path.exists(extra):
+            with open(extra, encoding="utf-8") as f:
+                items += json.load(f)
+    have = all_issues()
+    # a copy with our first issues (an earlier run that stopped, or an earlier section): go on from there; a copy with
+    # other issues: create none, the numbers the course uses would not match
+    if [x["title"] for x in have] == [x["title"] for x in items[:len(have)]] and [x["number"] for x in have] == list(range(1, len(have) + 1)):
+        if len(have) < len(items):
+            issues(numbers, items, first=len(have) + 1)
+        else:
+            print("issues: all there already")
     else:
-        items = load("issues.json")
-        for s in range(3, section + 1):   # issues that appear in later weeks of the story
-            extra = os.path.join(HERE, "sections", f"s{s}.issues.json")   # outside the copied folder sections/sN
-            if os.path.exists(extra):
-                with open(extra, encoding="utf-8") as f:
-                    items += json.load(f)
-        issues(numbers, items)
+        print("issues: the copy has other issues, none created (the course's issue numbers would not match)")
     section_files()
     print(f"Harbor is ready at: {START}")
 
