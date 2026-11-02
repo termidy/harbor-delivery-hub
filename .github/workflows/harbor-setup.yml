@@ -1,0 +1,35 @@
+# Course helper, not an agentic workflow: it fills a new copy of the Harbor Delivery Hub with the labels, the
+# milestones M1-M4 and the issues of the Harbor project, and can bring the copy to the start of a later section.
+# Run it from the Actions tab: "Set up Harbor" > Run workflow.
+name: Set up Harbor
+
+on:
+  workflow_dispatch:
+    inputs:
+      start:
+        description: "Where do you start?"
+        type: choice
+        default: "Course start (Week 2)"
+        options:
+          - "Course start (Week 2)"
+          - "Start of section 3 (Copilot)"
+          - "Start of section 4 (Design)"
+          - "Start of section 5 (Build)"
+          - "Start of section 6 (Human in the loop)"
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Labels, milestones, issues and section files
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          START: ${{ inputs.start }}
+        run: python3 .github/harbor-setup/setup.py

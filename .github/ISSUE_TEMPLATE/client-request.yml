@@ -1,0 +1,69 @@
+name: Client request
+description: A change request, a question or a defect from DemoFoods for the Harbor project.
+title: "[Request] "
+labels: ["change-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for every request to the Harbor team. One request per form, please.
+        The Harbor team reviews new requests every day and may ask for missing details in a comment.
+  - type: dropdown
+    id: request-type
+    attributes:
+      label: Request type
+      description: What kind of request is this?
+      options:
+        - Change request
+        - Question
+        - Defect
+    validations:
+      required: true
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency
+      description: How soon does DemoFoods need this?
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: false
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of the project does it touch?
+      options:
+        - Orders
+        - Payments
+        - Inventory
+        - Invoicing
+        - Reporting
+        - Other
+    validations:
+      required: false
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What do you need, and why? Add examples, document names or requirement IDs if you have them.
+      placeholder: "Example: Today PAY-04 in requirements/payments.md says ... We need ... because ..."
+    validations:
+      required: true
+  - type: input
+    id: needed-by
+    attributes:
+      label: Needed by
+      description: The project week when you need it.
+      placeholder: "Week 5"
+    validations:
+      required: false
+  - type: checkboxes
+    id: duplicate-check
+    attributes:
+      label: Duplicate check
+      options:
+        - label: I have checked that this request is not already open
+          required: true

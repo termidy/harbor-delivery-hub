@@ -1,0 +1,17 @@
+[
+  {"name": "change-request", "color": "1D76DB", "description": "A client asks to change scope, a document or a requirement"},
+  {"name": "question", "color": "D876E3", "description": "A client question that needs an answer"},
+  {"name": "defect", "color": "D73A4A", "description": "Something is wrong in a document, data or the system"},
+  {"name": "priority-high", "color": "B60205", "description": "Needed this week or blocks a milestone"},
+  {"name": "priority-medium", "color": "FBCA04", "description": "Needed within the current sprint"},
+  {"name": "priority-low", "color": "C2E0C6", "description": "Can wait for a later sprint"},
+  {"name": "needs-info", "color": "F9D0C4", "description": "Waiting for missing details from the requester"},
+  {"name": "needs-approval", "color": "E99695", "description": "Draft waiting for the delivery manager's approval"},
+  {"name": "approved", "color": "0E8A16", "description": "Approved by the delivery manager"},
+  {"name": "escalation", "color": "5319E7", "description": "Escalated to the Head of Delivery"},
+  {"name": "area:orders", "color": "BFD4F2", "description": "Order entry and order handling"},
+  {"name": "area:payments", "color": "BFD4F2", "description": "Customer payments and matching"},
+  {"name": "area:inventory", "color": "BFD4F2", "description": "Stock, warehouse and products"},
+  {"name": "area:invoicing", "color": "BFD4F2", "description": "Invoices and credit notes"},
+  {"name": "area:reporting", "color": "BFD4F2", "description": "Status reports and Finance reports"}
+]

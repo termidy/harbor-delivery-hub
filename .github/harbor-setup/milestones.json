@@ -1,0 +1,6 @@
+[
+  {"title": "M1 Requirements signed off", "description": "Orders, payments, inventory and invoicing requirements signed off by DemoFoods.", "week": 3},
+  {"title": "M2 Data migration rehearsal", "description": "Full rehearsal of the data migration from the old order system to DemoERP.", "week": 7},
+  {"title": "M3 User acceptance testing", "description": "DemoFoods key users test DemoERP and accept it.", "week": 10},
+  {"title": "M4 DemoERP go-live", "description": "DemoFoods starts working in DemoERP.", "week": 12}
+]

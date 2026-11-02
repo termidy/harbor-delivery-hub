@@ -1,0 +1,542 @@
+[
+  {
+    "title": "Confirm the project plan and milestones with DemoFoods",
+    "body": "Agree the 12-week plan and the dates of M1 to M4 with Laura Chen.\n\nOwner: Delivery manager. Due: Week 1.",
+    "labels": [
+      "priority-high"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Set up the Harbor Delivery board",
+    "body": "Board for all Harbor work: table, board and roadmap views.\n\nOwner: Delivery manager. Due: Week 2.\n\n- [ ] Fields: Status, Owner, Due, RAG status\n- [ ] Sprint field: six 2-week sprints\n- [ ] Built-in workflows on",
+    "labels": [
+      "priority-medium"
+    ],
+    "milestone": null,
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Orders requirements: draft and review",
+    "body": "Write `requirements/orders.md` and get it reviewed.\n\nOwner: Aisha Rahman. Due: Week 3.\n\n- [ ] First draft\n- [ ] Update after the design workshop\n- [ ] Review by Tom Becker\n- [ ] Sign-off by DemoFoods",
+    "labels": [
+      "area:orders",
+      "priority-high"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Payments requirements: draft and sign-off",
+    "body": "Write `requirements/payments.md` and get it signed off.\n\nOwner: Aisha Rahman. Due: Week 2.\n\n- [ ] First draft\n- [ ] Review by Tom Becker\n- [ ] Sign-off by Laura Chen and Tom Becker",
+    "labels": [
+      "area:payments",
+      "priority-high"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Inventory requirements: draft and review",
+    "body": "Write `requirements/inventory.md` and get it reviewed.\n\nOwner: Aisha Rahman. Due: Week 3.\n\n- [ ] First draft\n- [ ] Review with the DemoFoods warehouse manager\n- [ ] Sign-off by DemoFoods",
+    "labels": [
+      "area:inventory",
+      "priority-medium"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Invoicing requirements: draft and review",
+    "body": "Write `requirements/invoicing.md` and get it reviewed.\n\nOwner: Aisha Rahman. Due: Week 3.\n\n- [ ] First draft\n- [ ] Finance comments on payment terms\n- [ ] Sign-off by DemoFoods",
+    "labels": [
+      "area:invoicing",
+      "priority-medium"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Plan the design workshop for order entry and payments",
+    "body": "Half-day workshop with the order desk and credit control.\n\nOwner: Aisha Rahman. Due: Week 2.\n\n- [ ] Agenda\n- [ ] Key users named by DemoFoods\n- [ ] Notes in `meetings/`",
+    "labels": [
+      "area:orders",
+      "area:payments",
+      "priority-high"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Agree the status report format with Laura Chen",
+    "body": "Use the PMO standard in `requirements/report-spec.md` and `reports/template.md`.\n\nOwner: Delivery manager. Due: Week 1.",
+    "labels": [
+      "area:reporting",
+      "priority-medium"
+    ],
+    "milestone": null,
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Weekly status report",
+    "body": "Write the status report every Friday on `reports/template.md`.\n\nOwner: Delivery manager. Due: every Friday.",
+    "labels": [
+      "area:reporting",
+      "priority-high"
+    ],
+    "milestone": null,
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Set up the RAID log",
+    "body": "Risks, assumptions, issues and decisions in `raid/raid-log.md`.\n\nOwner: Delivery manager. Due: Week 1.",
+    "labels": [
+      "priority-medium"
+    ],
+    "milestone": null,
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Data migration: map the old order system to DemoERP",
+    "body": "Map tables and fields for customers, products, orders and invoices.\n\nOwner: Data migration lead. Due: Week 4.\n\n- [ ] Customers\n- [ ] Products\n- [ ] Open orders\n- [ ] Invoices",
+    "labels": [
+      "priority-high"
+    ],
+    "milestone": "M2 Data migration rehearsal",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Change request: allow partial payments on an invoice",
+    "body": "Raised by Laura Chen at the kickoff (`meetings/week-01-kickoff.md`). Some large customers pay one invoice in two or three parts.\n\nToday PAY-04 in `requirements/payments.md` says a payment is applied only when it covers the full open amount. Partial payments are not allowed.\n\nChange: allow several payments on one invoice until the invoice is fully paid. The invoice shows the open amount after each payment.\n\nOwner: Aisha Rahman. Impact check: Tom Becker. Due: Week 3.",
+    "labels": [
+      "change-request",
+      "area:payments",
+      "priority-high"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Data migration: data quality check of customer master data",
+    "body": "Find duplicates and old delivery addresses before the rehearsal (R-002).\n\nOwner: Data migration lead. Due: Week 4.\n\n- [ ] Duplicate customers\n- [ ] Delivery addresses\n- [ ] Credit limits",
+    "labels": [
+      "priority-high"
+    ],
+    "milestone": "M2 Data migration rehearsal",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Data migration: rehearsal plan for M2",
+    "body": "Plan the full rehearsal: steps, timing, checks, who does what.\n\nOwner: Data migration lead. Due: Week 5.\n\n- [ ] Steps and order\n- [ ] Checks after each step\n- [ ] Go or stop rules",
+    "labels": [
+      "priority-high"
+    ],
+    "milestone": "M2 Data migration rehearsal",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Data migration: test extract from the old order system",
+    "body": "DemoFoods IT delivers a full extract for the rehearsal.\n\nOwner: DemoFoods IT. Due: Week 5.",
+    "labels": [
+      "priority-high"
+    ],
+    "milestone": "M2 Data migration rehearsal",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Interface list: bank file and warehouse scanners",
+    "body": "List every interface DemoERP needs, with format and owner.\n\nOwner: Tom Becker. Due: Week 3.",
+    "labels": [
+      "area:payments",
+      "area:inventory",
+      "priority-medium"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Test strategy for user acceptance testing",
+    "body": "Scope, test cycles, entry and exit rules, defect handling.\n\nOwner: Test lead. Due: Week 5.",
+    "labels": [
+      "priority-medium"
+    ],
+    "milestone": "M3 User acceptance testing",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Test scripts: orders and payments",
+    "body": "Test scripts from the signed requirements and the user stories.\n\nOwner: Test lead. Due: Week 8.",
+    "labels": [
+      "area:orders",
+      "area:payments",
+      "priority-medium"
+    ],
+    "milestone": "M3 User acceptance testing",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Test scripts: inventory and invoicing",
+    "body": "Test scripts from the signed requirements.\n\nOwner: Test lead. Due: Week 8.",
+    "labels": [
+      "area:inventory",
+      "area:invoicing",
+      "priority-medium"
+    ],
+    "milestone": "M3 User acceptance testing",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Name the key users for user acceptance testing",
+    "body": "DemoFoods names key users for each area (R-010, A-001).\n\nOwner: Delivery manager. Due: Week 4.",
+    "labels": [
+      "priority-medium"
+    ],
+    "milestone": "M3 User acceptance testing",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Training needs analysis",
+    "body": "Who needs training, on what, and when. Include the warehouse shifts.\n\nOwner: Training lead. Due: Week 6.",
+    "labels": [
+      "priority-low"
+    ],
+    "milestone": "M4 DemoERP go-live",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Training materials for the order desk",
+    "body": "Short guides and practice orders for order entry in DemoERP.\n\nOwner: Training lead. Due: Week 9.",
+    "labels": [
+      "area:orders",
+      "priority-low"
+    ],
+    "milestone": "M4 DemoERP go-live",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "User stories for order entry",
+    "body": "Write user stories with acceptance criteria from `meetings/week-02-design-workshop.md`.\n\nOwner: Aisha Rahman. Due: Week 3.",
+    "labels": [
+      "area:orders",
+      "priority-high"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "User stories for payments",
+    "body": "Write user stories with acceptance criteria from `requirements/payments.md`.\n\nOwner: Aisha Rahman. Due: Week 4.",
+    "labels": [
+      "area:payments",
+      "priority-medium"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Cut-over plan",
+    "body": "Step-by-step plan for the go-live weekend, with timings and owners.\n\nOwner: Tom Becker. Due: Week 8.\n\n- [ ] Last orders in the old system\n- [ ] Final data load\n- [ ] Checks before DemoFoods starts work",
+    "labels": [
+      "priority-medium"
+    ],
+    "milestone": "M4 DemoERP go-live",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Go or no-go criteria for go-live",
+    "body": "Written criteria for the go-live decision with Laura Chen.\n\nOwner: Delivery manager. Due: Week 9.",
+    "labels": [
+      "priority-medium"
+    ],
+    "milestone": "M4 DemoERP go-live",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Support model after go-live",
+    "body": "Who answers user questions in the first weeks after go-live, and how.\n\nOwner: Delivery manager. Due: Week 10.",
+    "labels": [
+      "priority-low"
+    ],
+    "milestone": "M4 DemoERP go-live",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Finance reports needed in DemoERP",
+    "body": "List the reports Finance uses today and which ones DemoERP must give.\n\nOwner: Aisha Rahman. Due: Week 4.",
+    "labels": [
+      "area:reporting",
+      "priority-medium"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "User roles and access in DemoERP",
+    "body": "Roles for the order desk, warehouse, credit control and Finance.\n\nOwner: Tom Becker. Due: Week 6.",
+    "labels": [
+      "priority-medium"
+    ],
+    "milestone": "M3 User acceptance testing",
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "Weekly client sync: agenda and notes",
+    "body": "Agenda before each sync, notes in `meetings/` after it.\n\nOwner: Delivery manager. Due: every week.",
+    "labels": [
+      "priority-low"
+    ],
+    "milestone": null,
+    "week": 1,
+    "kind": "backlog"
+  },
+  {
+    "title": "[Request] Delivery time window on each order",
+    "body": "### Request type\n\nChange request\n\n### Urgency\n\nMedium\n\n### Area\n\nOrders\n\n### Description\n\nSome customers can only receive goods in a time window, for example 6 to 9 am. We need a field for this on the order, and it must print on the delivery note.\n\n### Needed by\n\nWeek 4\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "change-request",
+      "priority-medium",
+      "area:orders"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 1,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Do product codes change in DemoERP?",
+    "body": "### Request type\n\nQuestion\n\n### Urgency\n\nHigh\n\n### Area\n\nInventory\n\n### Description\n\nOur customers order by product code. If the codes change, every customer needs a new list. Please confirm if the codes stay the same.\n\n### Needed by\n\nWeek 3\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "question",
+      "priority-high",
+      "area:inventory"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 1,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Payment terms in the invoicing draft are wrong",
+    "body": "### Request type\n\nDefect\n\n### Urgency\n\nHigh\n\n### Area\n\nInvoicing\n\n### Description\n\nBIL-03 in requirements/invoicing.md says 30 days for all customers. Our standard is 14 days. Only some large customers have 30 days.\n\n### Needed by\n\nWeek 3\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "defect",
+      "priority-high",
+      "area:invoicing"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 1,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Show available credit on the order screen",
+    "body": "### Request type\n\nChange request\n\n### Urgency\n\nHigh\n\n### Area\n\nOrders\n\n### Description\n\nWhen the order desk opens an order, they must see the customer's credit limit and how much of it is still free. Today they call credit control for every big order.\n\n### Needed by\n\nWeek 4\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "change-request",
+      "priority-high",
+      "area:orders"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 1,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Warehouse plan for the go-live weekend",
+    "body": "### Request type\n\nQuestion\n\n### Urgency\n\nLow\n\n### Area\n\nInventory\n\n### Description\n\nCan the warehouse team see the plan for the go-live weekend? They need to plan shifts.\n\n### Needed by\n\n_No response_\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "question",
+      "priority-low",
+      "area:inventory"
+    ],
+    "milestone": "M4 DemoERP go-live",
+    "week": 1,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Same product sold by the case and by the pallet",
+    "body": "### Request type\n\nChange request\n\n### Urgency\n\nMedium\n\n### Area\n\nInventory\n\n### Description\n\nSome customers buy the same product by the case and others by the pallet. One sales unit per product is not enough for us.\n\n### Needed by\n\nWeek 5\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "change-request",
+      "priority-medium",
+      "area:inventory"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 1,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Monthly statement for each customer",
+    "body": "### Request type\n\nChange request\n\n### Urgency\n\nMedium\n\n### Area\n\nInvoicing\n\n### Description\n\nFinance sends each customer a statement of open invoices at the end of the month. We need this in DemoERP too.\n\n### Needed by\n\nWeek 6\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "change-request",
+      "priority-medium",
+      "area:invoicing"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 1,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Open client requests in the status report",
+    "body": "### Request type\n\nChange request\n\n### Urgency\n\nLow\n\n### Area\n\nReporting\n\n### Description\n\nPlease list our open requests in the status report, with the answer or decision for each one.\n\n### Needed by\n\nWeek 3\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "change-request",
+      "priority-low",
+      "area:reporting"
+    ],
+    "milestone": null,
+    "week": 1,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Who approves credit notes in DemoERP?",
+    "body": "### Request type\n\nQuestion\n\n### Urgency\n\nMedium\n\n### Area\n\nPayments\n\n### Description\n\nToday the credit control lead approves every credit note. Will this stay the same in DemoERP?\n\n### Needed by\n\nWeek 3\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "question",
+      "priority-medium",
+      "area:payments"
+    ],
+    "milestone": "M1 Requirements signed off",
+    "week": 2,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Direct debit customers on the first day",
+    "body": "### Request type\n\nQuestion\n\n### Urgency\n\nHigh\n\n### Area\n\nPayments\n\n### Description\n\nAbout 120 customers pay by direct debit. Will their collections run on the first day after go-live, or do we collect them by hand?\n\n### Needed by\n\nWeek 4\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "question",
+      "priority-high",
+      "area:payments"
+    ],
+    "milestone": "M4 DemoERP go-live",
+    "week": 2,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Order cut-off time",
+    "body": "### Request type\n\nQuestion\n\n### Urgency\n\n_No response_\n\n### Area\n\nOrders\n\n### Description\n\nIs the cut-off still 2 pm in the new system?\n\n### Needed by\n\n_No response_\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "change-request"
+    ],
+    "milestone": null,
+    "week": 2,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Wrong prices in the sample file",
+    "body": "### Request type\n\nDefect\n\n### Urgency\n\nHigh\n\n### Area\n\nOrders\n\n### Description\n\nSome prices in the sample file are wrong.\n\n### Needed by\n\nWeek 3\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "change-request"
+    ],
+    "milestone": null,
+    "week": 2,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Route number on the invoice",
+    "body": "### Request type\n\nChange request\n\n### Urgency\n\nMedium\n\n### Area\n\nInvoicing\n\n### Description\n\nOur drivers hand over the invoice with the goods. Please print the delivery route number on the invoice, so the driver can check it.\n\n### Needed by\n\nWeek 6\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "change-request"
+    ],
+    "milestone": null,
+    "week": 2,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Training for the night shift",
+    "body": "### Request type\n\nChange request\n\n### Urgency\n\nLow\n\n### Area\n\nOther\n\n### Description\n\nThe warehouse night shift cannot come to day sessions.\n\n### Needed by\n\n_No response_\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "change-request"
+    ],
+    "milestone": null,
+    "week": 2,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Status report earlier",
+    "body": "### Request type\n\nQuestion\n\n### Urgency\n\n_No response_\n\n### Area\n\nReporting\n\n### Description\n\nCan we have it earlier?\n\n### Needed by\n\n_No response_\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "change-request"
+    ],
+    "milestone": null,
+    "week": 2,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Order desk needs to see how much a customer can still buy on credit",
+    "body": "### Request type\n\nChange request\n\n### Urgency\n\nHigh\n\n### Area\n\nOrders\n\n### Description\n\nBefore the order desk confirms a big order, they should know if the customer is close to the credit limit. Please show the remaining credit when they take the order, so they do not need to phone credit control.\n\n### Needed by\n\nWeek 4\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "change-request"
+    ],
+    "milestone": null,
+    "week": 2,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Reminders for overdue invoices",
+    "body": "### Request type\n\nChange request\n\n### Urgency\n\nMedium\n\n### Area\n\nPayments\n\n### Description\n\nWhen an invoice is overdue, DemoERP should send the customer a reminder. Today credit control does this by hand.\n\n### Needed by\n\nWeek 7\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "change-request"
+    ],
+    "milestone": null,
+    "week": 2,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] No real bank details in test data",
+    "body": "### Request type\n\nChange request\n\n### Urgency\n\nHigh\n\n### Area\n\nOther\n\n### Description\n\nPlease confirm that the test data for user acceptance testing does not contain real customer bank details. Our data protection officer asked.\n\n### Needed by\n\nWeek 6\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "change-request"
+    ],
+    "milestone": null,
+    "week": 2,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Rounding difference on invoice totals",
+    "body": "### Request type\n\nDefect\n\n### Urgency\n\n_No response_\n\n### Area\n\nInvoicing\n\n### Description\n\nThe invoice total is different by a few cents from the sum of the lines.\n\n### Needed by\n\n_No response_\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "change-request"
+    ],
+    "milestone": null,
+    "week": 2,
+    "kind": "client"
+  },
+  {
+    "title": "[Request] Picking list by delivery route",
+    "body": "### Request type\n\nQuestion\n\n### Urgency\n\nLow\n\n### Area\n\nInventory\n\n### Description\n\nCan DemoERP print the picking list sorted by delivery route? Today the warehouse sorts the lists by hand.\n\n### Needed by\n\nWeek 8\n\n### Duplicate check\n\n- [X] I have checked that this request is not already open",
+    "labels": [
+      "change-request"
+    ],
+    "milestone": null,
+    "week": 2,
+    "kind": "client"
+  }
+]
