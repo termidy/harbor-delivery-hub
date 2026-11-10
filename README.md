@@ -16,6 +16,7 @@ The project is now at the end of Week 2.
 | `reports/` | The status report template and the Friday status reports |
 | `.github/ISSUE_TEMPLATE/` | The client request form |
 | `.github/harbor-setup/` | Data for the "Set up Harbor" workflow: labels, milestones, issues |
+| `.github/demotime/` | The DemoTime MCP server: the team's planned hours, which GitHub does not have |
 
 ## Getting started
 
