@@ -1,0 +1,8 @@
+The two skills of section 5, in .github/skills: harbor-report-style, the skill you write in the lesson on a
+custom skill, and meeting-minutes, copied unchanged from github/awesome-copilot (MIT license,
+skills/meeting-minutes/SKILL.md at commit 68e5889), as in the lesson on installing an external skill.
+
+Not added, make them as the lessons show:
+- The Weekly Status Report workflow (.github/workflows/weekly-status-report.md and its .lock.yml). GitHub does not
+  let a workflow add workflow files, and the report needs your two secrets, your account name and your board.
+- The Client Request Intake automation. It is a setting on the Agents tab, not a file.
