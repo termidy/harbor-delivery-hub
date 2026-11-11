@@ -2,8 +2,9 @@
 
 Creates what "Use this template" does not copy: labels, milestones M1-M4 with due dates relative to today, and the
 issues of the project in a fixed order (so that every copy has the same issue numbers). With a later "start", it also
-adds the files each earlier section produced (.github/harbor-setup/sections/sN/) as one commit per section, and
-the issues of the later weeks (sections/sN.issues.json).
+adds the files each earlier section produced (.github/harbor-setup/sections/sN/) as one commit per section, with
+sections/sN.message.txt as the body of that commit when there is one, and the issues of the later weeks
+(sections/sN.issues.json).
 Safe to run twice: existing labels, milestones and files are kept; issues are created only in a copy that has none.
 """
 import datetime as dt
@@ -123,15 +124,23 @@ def section_files():
     git = lambda *a: subprocess.run(["git", *a], cwd=root, check=True)
     git("config", "user.name", "github-actions[bot]")
     git("config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com")
+    # a file the copy already has is the learner's own work: keep it, do not overwrite it
+    keep = lambda s, d: d if os.path.exists(d) else shutil.copy2(s, d)
     added = 0
     for s in range(2, section):
         src = os.path.join(HERE, "sections", f"s{s}")
         if not os.path.isdir(src):
             continue
-        shutil.copytree(src, root, dirs_exist_ok=True)
+        shutil.copytree(src, root, dirs_exist_ok=True, copy_function=keep)
         git("add", "-A")
         if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=root).returncode != 0:
-            git("commit", "-q", "-m", f"Harbor: what section {s} produced")
+            message = [f"Harbor: what section {s} produced"]
+            note = os.path.join(HERE, "sections", f"s{s}.message.txt")   # outside the copied folder sections/sN
+            if os.path.exists(note):
+                with open(note, encoding="utf-8") as f:
+                    message.append(f.read().strip())
+                print(message[-1])
+            git("commit", "-q", *[a for m in message for a in ("-m", m)])
             added += 1
     if added:
         git("push", "-q")
